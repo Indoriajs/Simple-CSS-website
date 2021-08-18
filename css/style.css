@@ -1,0 +1,241 @@
+/* * {
+    border: 1px solid red;
+} */
+
+body {     
+    text-align: center;
+    margin: 0;      
+    background-color: #171717;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+span{
+    color: darkgreen;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 
+    Different container types
+*/
+.block-container{
+    display: block;    
+}
+
+.grid-container.grid-10-90{
+    grid-template-columns: 10% 90%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*
+    Classes that contain the styles for the side navigation 
+*/
+
+.side-nav {      
+    display: flex;
+    flex-direction: column;   
+    position: absolute;
+    top: 20%;
+    width: 10%;                   
+    z-index: 997;
+    font-family: 'Rubik', sans-serif;
+}
+
+.nav-item {
+    min-height: 1em;
+    transform: translateX(-80%);
+    background: url("../res/img/chris-henry-XU7XspxKi7g-unsplash.jpg") no-repeat center center fixed;
+    margin: 30px 0 10% 0;
+    padding: 10% 10px 10% 10px;
+    border-bottom-right-radius: 30%;
+    border-top-right-radius: 30%;     
+    box-shadow: 10px 10px 10px black;   
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+.nav-item:hover {
+    transform: translateX(-10%);
+}
+
+.nav-item a{
+    display: none;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item:hover a{
+    display: block;
+}
+
+
+/*
+    Classes for the profile area
+*/
+
+.profile {
+    display: grid;
+    background: url("../res/ryan-hutton-Jztmx9yqjBw-unsplash\ \(1\).jpg") no-repeat center center fixed;
+    grid-template-columns: 50% 50%;
+}
+
+.profile-section {
+    position: relative;      
+    width: 100%;
+}
+
+.profile-card {
+    position: inherit;
+    background: transparent;   
+    /* border: 1px solid gray; */
+    margin: 25%;
+    padding: 25% 25% 30% 25%;
+    /* box-shadow: 10px 10px 10px #0F465C; */
+    font-family: 'Merriweather', serif;   
+}
+
+.profile-pic {    
+    position: absolute;
+    top: 10%;   
+    left: 20%;
+    right: 20%;
+    bottom: 50%;
+    border-radius: 35%;
+    
+    box-shadow: 5px 5px 10px rgb(5, 5, 5);                 
+}
+
+.profile-info {   
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    padding: 5% 0 5% 0;
+    color: rgb(235, 222, 222);
+    text-shadow: 5px 5px 4px rgb(84, 78, 78);
+   
+}
+
+.profile-social {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+/*
+    Classes for the about me section
+*/
+.about-me {
+    position: relative;
+    display: flex;
+    flex-direction: column;   
+   
+}
+
+.about-me-name {
+    text-shadow: 10px 10px 10px black;        
+    margin-top: 25%;
+    padding: 0 0 10% 0;
+    color: white;   
+}
+
+.about-me-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));       
+}
+
+.about-me-buttons button {
+    box-shadow: 10px 10px 5px black;
+    color: white;
+    background-color: rgba(0, 0, 255, 0.501);
+    padding: 5%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 25%;
+    margin: 5% 25% 5% 25%;
+}
+
+.about-me-buttons button:hover {
+    background-color: rgb(0, 0, 255);
+}
+
+.about-me-text {
+    text-align: center;
+    color: white;    
+    text-shadow: 3px 3px 5px gray;
+    /* padding-right: 1em; */
+}
+
+/*
+    Classes for the web-footer style
+*/
+.web-footer {    
+    border: solid #171717;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));
+    padding-top: 15px;
+    font-size: x-small;
+}
+
+.web-footer-contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));
+}
+
+.web-footer-contact div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(28, 23, 23);
+    padding: 2%;
+    color: white;    
+}
+
+.made-by {
+    text-align: start;
+    background: #171717;   
+    padding-top: 3%;    
+    color: white;   
+}
+
+/*
+    Changes disply of profile to flex on smaller screens
+*/
+@media only screen and (max-width: 800px){
+    .profile{
+        display: flex;        
+        flex-direction: column;
+    }
+}
+
+/*
+    Animations
+*/
+
+.fade-up{
+    animation: up-fade 1s ease-in-out 0.3s 1 normal both;    
+}
+
+
+@keyframes up-fade {
+    from {
+        opacity: 0%;
+        transform: translateY(50px);
+    }    
+    to {
+        opacity: 100%;
+        transform: translate(0);
+    }
+}
