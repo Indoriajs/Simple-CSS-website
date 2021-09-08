@@ -5,7 +5,7 @@
 body {     
     text-align: center;
     margin: 0;      
-    background-color: #171717;
+    background: linear-gradient(45deg, blue, black 50%);
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -72,6 +72,20 @@ img {
     color: white;
 }
 
+.nav-item a span {
+    display: block;
+    position: absolute;
+}
+
+.nav-item a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 88%;
+    height: 2px;    
+    background: linear-gradient(90deg, transparent, white);
+    animation: trans-to-right 2s ease 0s infinite normal none;
+}
+
 .nav-item:hover a{
     display: block;
 }
@@ -83,7 +97,7 @@ img {
 
 .profile {
     display: grid;
-    background: url("../res/ryan-hutton-Jztmx9yqjBw-unsplash\ \(1\).jpg") no-repeat center center fixed;
+    /* background: url("../res/ryan-hutton-Jztmx9yqjBw-unsplash\ \(1\).jpg") no-repeat center center fixed; */
     grid-template-columns: 50% 50%;
 }
 
@@ -134,6 +148,8 @@ img {
     padding-top: 15px;
 }
 
+
+
 /*
     Classes for the about me section
 */
@@ -159,17 +175,20 @@ img {
 .about-me-buttons button {
     box-shadow: 10px 10px 5px black;
     color: white;
-    background-color: rgba(0, 0, 255, 0.501);
+    background: none;
+    border: solid 3px blue;
     padding: 5%;
     border-top-left-radius: 25%;
     border-top-right-radius: 10%;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 25%;
     margin: 5% 25% 5% 25%;
+    transition: 0.3s;
 }
 
 .about-me-buttons button:hover {
-    background-color: rgb(0, 0, 255);
+    background-color: rgb(0, 0, 255);    
+    animation: neon-breathe 2s ease 0s infinite alternate none;   
 }
 
 .about-me-text {
@@ -178,6 +197,7 @@ img {
     text-shadow: 3px 3px 5px gray;
     /* padding-right: 1em; */
 }
+
 
 /*
     Classes for the web-footer style
@@ -237,5 +257,30 @@ img {
     to {
         opacity: 100%;
         transform: translate(0);
+    }
+}
+
+@keyframes neon-breathe {
+    from {
+        box-shadow: 
+        0px 0px 10px blue;
+    }
+    to {
+        box-shadow: 
+        0px 0px 10px blue,
+        0px 0px 40px blue;
+    }
+}
+
+@keyframes trans-to-right {
+    0% {
+        left: -100%;
+    }    
+    50% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+        opacity: 0%;
     }
 }
